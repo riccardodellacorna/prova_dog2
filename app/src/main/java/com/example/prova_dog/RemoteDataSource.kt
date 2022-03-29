@@ -1,4 +1,8 @@
 package com.example.prova_dog
 
-class RemoteDataSource {
+import javax.inject.Inject
+
+class RemoteDataSource @Inject constructor(private val dogService: DogService) {
+    suspend fun getDog() =
+        dogService.getDog()
 }
